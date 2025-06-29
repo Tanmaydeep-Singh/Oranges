@@ -10,6 +10,7 @@ import IntroSection from "@/components/Home/Inrto";
 import { Feather } from "lucide-react";
 import Features from "@/components/Home/Features";
 import FomoBanner from "@/components/Home/CTA";
+import FAQ from "@/components/Home/FAQ";
 
 export default function Home() {
 
@@ -22,6 +23,7 @@ export default function Home() {
         <IntroSection />
         <Features/>
         <FomoBanner/>
+        <FAQ/>
         <AboutUs />
         <WhatWeOffer />
       </div>
