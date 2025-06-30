@@ -24,8 +24,6 @@ export default function Home() {
         <Features/>
         <FomoBanner/>
         <FAQ/>
-        <AboutUs />
-        <WhatWeOffer />
       </div>
     </div>
 
