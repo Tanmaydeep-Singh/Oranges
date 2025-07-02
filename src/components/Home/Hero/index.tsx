@@ -12,9 +12,9 @@ const Hero = () => {
         to help kids grow beyond classrooms.
       </p>
       <div className="mt-8">
-        <button className="px-6 py-3 rounded-2xl bg-orange-500 text-white font-semibold text-lg shadow-md hover:bg-orange-600 transition-all duration-300">
-          Join the Beta
-        </button>
+        <button className="px-8 py-4 rounded-full bg-orange-500 text-white font-bold text-lg shadow-xl hover:bg-orange-600 transition-all duration-300 transform hover:scale-105">
+            Join the Beta & Get Early Access!
+          </button>
       </div>
     </section>
   );
