@@ -1,39 +1,51 @@
-// components/Features/ActivitiesMarquee/index.tsx
 "use client";
 
 import Marquee from "react-fast-marquee";
+import { Sparkles, BookOpen, Gamepad2, Music, Palette, Globe, PenTool } from "lucide-react";
 
 const activities = [
-  { title: "🎨 Art Challenges", desc: "Boost creativity with fun drawing & design activities." },
-  { title: "📖 Storytelling", desc: "Enhance imagination through engaging story sessions." },
-  { title: "🧩 Puzzles", desc: "Improve problem-solving skills with interactive puzzles." },
-  { title: "🎮 Quizzes & Games", desc: "Make learning fun with gamified quizzes." },
-  { title: "🌍 Language Learning", desc: "Learn basics of new languages with interactive games." },
-  { title: "🔬 Science Experiments", desc: "Hands-on activities to spark curiosity in science." },
-  { title: "🤝 Team Projects", desc: "Collaborate and learn teamwork through group tasks." },
-  { title: "🏆 Leaderboards", desc: "Friendly competitions to motivate and inspire growth." },
+  { title: "Creative Writing", icon: PenTool, color: "bg-orange-100 text-orange-600" },
+  { title: "Storytelling", icon: BookOpen, color: "bg-pink-100 text-pink-600" },
+  { title: "Math Games", icon: Gamepad2, color: "bg-blue-100 text-blue-600" },
+  { title: "Art & Drawing", icon: Palette, color: "bg-purple-100 text-purple-600" },
+  { title: "Music & Rhythm", icon: Music, color: "bg-yellow-100 text-yellow-600" },
+  { title: "Science Experiments", icon: Sparkles, color: "bg-green-100 text-green-600" },
+  { title: "Global Languages", icon: Globe, color: "bg-red-100 text-red-600" },
 ];
 
 const ActivitiesMarquee = () => {
   return (
-    <section className="py-20 bg-orange-50">
-      <h2 className="text-3xl sm:text-4xl font-bold text-center text-orange-600 mb-12">
-        Activities We Offer
-      </h2>
+    <section className="py-24 bg-gradient-to-b from-white to-orange-50">
+      <div className=" mx-auto px-6 lg:px-8 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-12">
+          Fun Activities Kids Love 💡
+        </h2>
 
-      <Marquee gradient={false} speed={40} pauseOnHover className="space-x-8">
-        {activities.map((activity, index) => (
-          <div
-            key={index}
-            className="w-72 h-40 bg-white shadow-lg rounded-2xl flex flex-col justify-center items-center text-center px-6 py-4 mx-6 border border-orange-200 hover:shadow-2xl transition"
-          >
-            <h3 className="text-xl font-semibold text-orange-700 mb-2">
-              {activity.title}
-            </h3>
-            <p className="text-gray-600 text-sm">{activity.desc}</p>
-          </div>
-        ))}
-      </Marquee>
+        <Marquee speed={40} gradient={false} className="overflow-hidden">
+          {activities.map((activity, index) => (
+            <div
+              key={index}
+              className={`flex items-center gap-4 px-8 py-6 mx-4 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 cursor-pointer ${activity.color}`}
+            >
+              <activity.icon className="w-10 h-10" />
+              <span className="text-xl font-semibold">{activity.title}</span>
+            </div>
+          ))}
+        </Marquee>
+
+        {/* Second row, reversed direction */}
+        <Marquee speed={40} gradient={false} direction="right" className="mt-8 overflow-hidden">
+          {activities.map((activity, index) => (
+            <div
+              key={index}
+              className={`flex items-center gap-4 px-8 py-6 mx-4 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 cursor-pointer ${activity.color}`}
+            >
+              <activity.icon className="w-10 h-10" />
+              <span className="text-xl font-semibold">{activity.title}</span>
+            </div>
+          ))}
+        </Marquee>
+      </div>
     </section>
   );
 };
