@@ -9,8 +9,8 @@ import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
   { label: "Features", href: "/features" },
-  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -51,11 +51,11 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="/logos/oranged-logo.png"
+            src="/Oranged.png"
             alt="Oranged Logo"
-            width={36}
-            height={36}
-            className="rounded-lg"
+            width={60}
+            height={60}
+            className="rounded-lg object-fill"
           />
           <span className="font-extrabold text-lg text-orange-600">Oranged</span>
         </Link>
